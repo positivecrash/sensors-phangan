@@ -1,0 +1,88 @@
+:root {
+  --color-light: #fff;
+  --color-dark: #000;
+  --color-gray: #4e4e4f;
+  --color-middle-gray: #B6BDC4;
+  --color-light-gray: #d5d3d3;
+  --color-blue: #007bff; 
+  --color-teal: #12bfcc;
+  --color-green: #60bc2a;
+  --color-green-bright: hsl(83, 100%, 71%);
+  --color-bright-green-dim: hsla(83, 100%, 71%, 0.372);
+  --color-red: #fc0202; 
+  --color-bright-red: #ff4d00;
+  --color-yellow: #f5ff00;
+  --color-orange: #ff9d00;
+  --color-purple: #7a00da;
+  --color-navy: hsl(219, 63%, 45%);
+
+
+  /* Measurements colors */
+  --measure-nodata: var(--color-light-gray);
+  --measure-green: #6bde28;
+  --measure-bluegreen: #01EAEA;
+  --measure-yellow: #FDCB24;
+  --measure-orange: #FF8732;
+  --measure-red: #FD4C1F;
+  --measure-darkred: #EB0004;
+  --measure-blue: #00aeff;
+  --measure-darkblue: #016ee3;
+
+  --color-link: var(--color-blue);
+  --color-link-hover: var(--color-green);
+
+  --font-family--normal: 'Noto Sans', sans-serif;
+  --font-size: 0.9rem;
+
+  --gap: 1rem;
+
+  --sensor-popup-bg: #ffffff;
+
+  --app-bodybg: #ffffff;
+  --app-borderwidth: 2px;
+  --app-bordercolor: #000;
+  --app-inputbg: #fff;
+  --app-inputtextcolor: #000;
+  --app-inputpadding: .8rem;
+  --app-inputbradius: .3rem;
+  --app-textcolor: #000;
+  --app-inputheight: 2.4rem;
+  --app-popoverbg: #fff;
+  --app-buttoncolor:hsl(211, 100%, 50%);
+  --app-buttoncolor-active:hsl(211, 96%, 40%);
+  --app-buttoncolor-hover:hsl(211, 98%, 34%);
+  --app-buttontextcolor: #fff;
+  --app-popoverbg: #fff;
+  --app-tablebody: #fff;
+  --app-tablerow: #f8fbff;
+  --app-tableborder: #ddd;
+
+  --app-controlsgap: calc(var(--gap) * 2);
+}
+
+@media screen and (max-width: 500px) {
+  :root {
+    --font-size: .8rem;
+    --gap: .5rem;
+  }
+
+  .leaflet-bottom .leaflet-control {
+    margin-bottom: 0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --app-bodybg: #1b1b1b;
+    --app-textcolor: #fff;
+    --app-bordercolor: var(--color-gray);
+    --app-tablerow: hsl(220, 23%, 18%);
+    --app-tableborder: #ddd;
+    --app-controlsgap: calc(var(--gap) * 0.5);
+    --app-buttoncolor:hsl(219, 100%, 60%);
+    --app-buttoncolor-hover:hsl(219, 100%, 50%);
+    --color-light-gray: #6d6d6d;
+    --color-green-bright: hsl(83, 64%, 29%);
+    --color-bright-green-dim:  hsla(83, 64%, 29%, 0.55);
+  }
+}
