@@ -10,6 +10,9 @@
       "lng": "0.2"
     }
   },
+   "SERVICES": {
+    "accounts": false
+  },
   "SHOW_MESSAGES": false,
   "TITLE": "Map of independent air quality sensors for Thai Ko Pha Ngan",
   "SITE_NAME": "Sensors Map Thai Ko Pha Ngan",
