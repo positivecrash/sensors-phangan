@@ -1,21 +1,606 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang="en" amp="" dir="ltr"><head>
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="icon" href="/sensors-phangan/favicon.ico">
-    <meta name="description" content="Robonomics team invite you to use new internet technologies for your IoT devices. This map is open source project with aim to present example of using ipfs, ethereum and polkadot tech for Smart cities applications developers.">
-    <link rel="apple-touch-icon" href="/sensors-phangan/app-icon-120.png" sizes="120x120">
-    <link rel="mask-icon" href="/sensors-phangan/app-icon-512.png" color="#FFFFFF">
+    <style type="text/css">:root, :host {
+  --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+  --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
+  --fa-font-light: normal 300 1em/1 "Font Awesome 6 Pro";
+  --fa-font-thin: normal 100 1em/1 "Font Awesome 6 Pro";
+  --fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone";
+  --fa-font-duotone-regular: normal 400 1em/1 "Font Awesome 6 Duotone";
+  --fa-font-duotone-light: normal 300 1em/1 "Font Awesome 6 Duotone";
+  --fa-font-duotone-thin: normal 100 1em/1 "Font Awesome 6 Duotone";
+  --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+  --fa-font-sharp-solid: normal 900 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-regular: normal 400 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-light: normal 300 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-thin: normal 100 1em/1 "Font Awesome 6 Sharp";
+  --fa-font-sharp-duotone-solid: normal 900 1em/1 "Font Awesome 6 Sharp Duotone";
+  --fa-font-sharp-duotone-regular: normal 400 1em/1 "Font Awesome 6 Sharp Duotone";
+  --fa-font-sharp-duotone-light: normal 300 1em/1 "Font Awesome 6 Sharp Duotone";
+  --fa-font-sharp-duotone-thin: normal 100 1em/1 "Font Awesome 6 Sharp Duotone";
+}
+
+svg:not(:root).svg-inline--fa, svg:not(:host).svg-inline--fa {
+  overflow: visible;
+  box-sizing: content-box;
+}
+
+.svg-inline--fa {
+  display: var(--fa-display, inline-block);
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.svg-inline--fa.fa-2xs {
+  vertical-align: 0.1em;
+}
+.svg-inline--fa.fa-xs {
+  vertical-align: 0em;
+}
+.svg-inline--fa.fa-sm {
+  vertical-align: -0.0714285705em;
+}
+.svg-inline--fa.fa-lg {
+  vertical-align: -0.2em;
+}
+.svg-inline--fa.fa-xl {
+  vertical-align: -0.25em;
+}
+.svg-inline--fa.fa-2xl {
+  vertical-align: -0.3125em;
+}
+.svg-inline--fa.fa-pull-left {
+  margin-right: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-pull-right {
+  margin-left: var(--fa-pull-margin, 0.3em);
+  width: auto;
+}
+.svg-inline--fa.fa-li {
+  width: var(--fa-li-width, 2em);
+  top: 0.25em;
+}
+.svg-inline--fa.fa-fw {
+  width: var(--fa-fw-width, 1.25em);
+}
+
+.fa-layers svg.svg-inline--fa {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.fa-layers-counter, .fa-layers-text {
+  display: inline-block;
+  position: absolute;
+  text-align: center;
+}
+
+.fa-layers {
+  display: inline-block;
+  height: 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: -0.125em;
+  width: 1em;
+}
+.fa-layers svg.svg-inline--fa {
+  transform-origin: center center;
+}
+
+.fa-layers-text {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+}
+
+.fa-layers-counter {
+  background-color: var(--fa-counter-background-color, #ff253a);
+  border-radius: var(--fa-counter-border-radius, 1em);
+  box-sizing: border-box;
+  color: var(--fa-inverse, #fff);
+  line-height: var(--fa-counter-line-height, 1);
+  max-width: var(--fa-counter-max-width, 5em);
+  min-width: var(--fa-counter-min-width, 1.5em);
+  overflow: hidden;
+  padding: var(--fa-counter-padding, 0.25em 0.5em);
+  right: var(--fa-right, 0);
+  text-overflow: ellipsis;
+  top: var(--fa-top, 0);
+  transform: scale(var(--fa-counter-scale, 0.25));
+  transform-origin: top right;
+}
+
+.fa-layers-bottom-right {
+  bottom: var(--fa-bottom, 0);
+  right: var(--fa-right, 0);
+  top: auto;
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: bottom right;
+}
+
+.fa-layers-bottom-left {
+  bottom: var(--fa-bottom, 0);
+  left: var(--fa-left, 0);
+  right: auto;
+  top: auto;
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: bottom left;
+}
+
+.fa-layers-top-right {
+  top: var(--fa-top, 0);
+  right: var(--fa-right, 0);
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: top right;
+}
+
+.fa-layers-top-left {
+  left: var(--fa-left, 0);
+  right: auto;
+  top: var(--fa-top, 0);
+  transform: scale(var(--fa-layers-scale, 0.25));
+  transform-origin: top left;
+}
+
+.fa-1x {
+  font-size: 1em;
+}
+
+.fa-2x {
+  font-size: 2em;
+}
+
+.fa-3x {
+  font-size: 3em;
+}
+
+.fa-4x {
+  font-size: 4em;
+}
+
+.fa-5x {
+  font-size: 5em;
+}
+
+.fa-6x {
+  font-size: 6em;
+}
+
+.fa-7x {
+  font-size: 7em;
+}
+
+.fa-8x {
+  font-size: 8em;
+}
+
+.fa-9x {
+  font-size: 9em;
+}
+
+.fa-10x {
+  font-size: 10em;
+}
+
+.fa-2xs {
+  font-size: 0.625em;
+  line-height: 0.1em;
+  vertical-align: 0.225em;
+}
+
+.fa-xs {
+  font-size: 0.75em;
+  line-height: 0.0833333337em;
+  vertical-align: 0.125em;
+}
+
+.fa-sm {
+  font-size: 0.875em;
+  line-height: 0.0714285718em;
+  vertical-align: 0.0535714295em;
+}
+
+.fa-lg {
+  font-size: 1.25em;
+  line-height: 0.05em;
+  vertical-align: -0.075em;
+}
+
+.fa-xl {
+  font-size: 1.5em;
+  line-height: 0.0416666682em;
+  vertical-align: -0.125em;
+}
+
+.fa-2xl {
+  font-size: 2em;
+  line-height: 0.03125em;
+  vertical-align: -0.1875em;
+}
+
+.fa-fw {
+  text-align: center;
+  width: 1.25em;
+}
+
+.fa-ul {
+  list-style-type: none;
+  margin-left: var(--fa-li-margin, 2.5em);
+  padding-left: 0;
+}
+.fa-ul > li {
+  position: relative;
+}
+
+.fa-li {
+  left: calc(-1 * var(--fa-li-width, 2em));
+  position: absolute;
+  text-align: center;
+  width: var(--fa-li-width, 2em);
+  line-height: inherit;
+}
+
+.fa-border {
+  border-color: var(--fa-border-color, #eee);
+  border-radius: var(--fa-border-radius, 0.1em);
+  border-style: var(--fa-border-style, solid);
+  border-width: var(--fa-border-width, 0.08em);
+  padding: var(--fa-border-padding, 0.2em 0.25em 0.15em);
+}
+
+.fa-pull-left {
+  float: left;
+  margin-right: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-pull-right {
+  float: right;
+  margin-left: var(--fa-pull-margin, 0.3em);
+}
+
+.fa-beat {
+  animation-name: fa-beat;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-bounce {
+  animation-name: fa-bounce;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+}
+
+.fa-fade {
+  animation-name: fa-fade;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-beat-fade {
+  animation-name: fa-beat-fade;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+}
+
+.fa-flip {
+  animation-name: fa-flip;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, ease-in-out);
+}
+
+.fa-shake {
+  animation-name: fa-shake;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin {
+  animation-name: fa-spin;
+  animation-delay: var(--fa-animation-delay, 0s);
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 2s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, linear);
+}
+
+.fa-spin-reverse {
+  --fa-animation-direction: reverse;
+}
+
+.fa-pulse,
+.fa-spin-pulse {
+  animation-name: fa-spin;
+  animation-direction: var(--fa-animation-direction, normal);
+  animation-duration: var(--fa-animation-duration, 1s);
+  animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+  animation-timing-function: var(--fa-animation-timing, steps(8));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-beat,
+.fa-bounce,
+.fa-fade,
+.fa-beat-fade,
+.fa-flip,
+.fa-pulse,
+.fa-shake,
+.fa-spin,
+.fa-spin-pulse {
+    animation-delay: -1ms;
+    animation-duration: 1ms;
+    animation-iteration-count: 1;
+    transition-delay: 0s;
+    transition-duration: 0s;
+  }
+}
+@keyframes fa-beat {
+  0%, 90% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(var(--fa-beat-scale, 1.25));
+  }
+}
+@keyframes fa-bounce {
+  0% {
+    transform: scale(1, 1) translateY(0);
+  }
+  10% {
+    transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+  }
+  30% {
+    transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+  }
+  50% {
+    transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+  }
+  57% {
+    transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+  }
+  64% {
+    transform: scale(1, 1) translateY(0);
+  }
+  100% {
+    transform: scale(1, 1) translateY(0);
+  }
+}
+@keyframes fa-fade {
+  50% {
+    opacity: var(--fa-fade-opacity, 0.4);
+  }
+}
+@keyframes fa-beat-fade {
+  0%, 100% {
+    opacity: var(--fa-beat-fade-opacity, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(var(--fa-beat-fade-scale, 1.125));
+  }
+}
+@keyframes fa-flip {
+  50% {
+    transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+  }
+}
+@keyframes fa-shake {
+  0% {
+    transform: rotate(-15deg);
+  }
+  4% {
+    transform: rotate(15deg);
+  }
+  8%, 24% {
+    transform: rotate(-18deg);
+  }
+  12%, 28% {
+    transform: rotate(18deg);
+  }
+  16% {
+    transform: rotate(-22deg);
+  }
+  20% {
+    transform: rotate(22deg);
+  }
+  32% {
+    transform: rotate(-12deg);
+  }
+  36% {
+    transform: rotate(12deg);
+  }
+  40%, 100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.fa-rotate-90 {
+  transform: rotate(90deg);
+}
+
+.fa-rotate-180 {
+  transform: rotate(180deg);
+}
+
+.fa-rotate-270 {
+  transform: rotate(270deg);
+}
+
+.fa-flip-horizontal {
+  transform: scale(-1, 1);
+}
+
+.fa-flip-vertical {
+  transform: scale(1, -1);
+}
+
+.fa-flip-both,
+.fa-flip-horizontal.fa-flip-vertical {
+  transform: scale(-1, -1);
+}
+
+.fa-rotate-by {
+  transform: rotate(var(--fa-rotate-angle, 0));
+}
+
+.fa-stack {
+  display: inline-block;
+  vertical-align: middle;
+  height: 2em;
+  position: relative;
+  width: 2.5em;
+}
+
+.fa-stack-1x,
+.fa-stack-2x {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: var(--fa-stack-z-index, auto);
+}
+
+.svg-inline--fa.fa-stack-1x {
+  height: 1em;
+  width: 1.25em;
+}
+.svg-inline--fa.fa-stack-2x {
+  height: 2em;
+  width: 2.5em;
+}
+
+.fa-inverse {
+  color: var(--fa-inverse, #fff);
+}
+
+.sr-only,
+.fa-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only-focusable:not(:focus),
+.fa-sr-only-focusable:not(:focus) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.svg-inline--fa .fa-primary {
+  fill: var(--fa-primary-color, currentColor);
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa .fa-secondary {
+  fill: var(--fa-secondary-color, currentColor);
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-primary {
+  opacity: var(--fa-secondary-opacity, 0.4);
+}
+
+.svg-inline--fa.fa-swap-opacity .fa-secondary {
+  opacity: var(--fa-primary-opacity, 1);
+}
+
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
+  fill: black;
+}</style><link rel="icon" href="/favicon.ico">
+    <meta name="description" content="Welcome to the decentralized opensource sensors map which operates with the sole intent of serving the free will of individuals, without any beneficiaries.">
+    <link rel="apple-touch-icon" href="/app-icon-120.png" sizes="120x120">
+    <link rel="mask-icon" href="/app-icon-512.png" color="#FFFFFF">
     <meta name="theme-color" content="#ffffff">
-    <title>Web3 public sensors map</title>
-    <script type="module" crossorigin="" src="/sensors-phangan/assets/index.7d991418.js"></script>
-    <link rel="stylesheet" href="/sensors-phangan/assets/index.54048a40.css">
-  </head>
+    <title>Map of independent air quality sensors for Thai Ko Pha Ngan</title>
+    <script type="module" crossorigin="" src="/assets/index.ec6635c0.js"></script>
+    <link rel="stylesheet" href="/assets/index.a9a264de.css">
+  <style>.vue-notification-group{display:block;position:fixed;z-index:5000}.vue-notification-wrapper{display:block;overflow:hidden;width:100%;margin:0;padding:0}.notification-title{font-weight:600}.vue-notification-template{display:block;box-sizing:border-box;background:white;text-align:left}.vue-notification{display:block;box-sizing:border-box;text-align:left;font-size:12px;padding:10px;margin:0 5px 5px;color:#fff;background:#44A4FC;border-left:5px solid #187FE7}.vue-notification.warn{background:#ffb648;border-left-color:#f48a06}.vue-notification.error{background:#E54D42;border-left-color:#b82e24}.vue-notification.success{background:#68CD86;border-left-color:#42a85f}.vn-fade-enter-active,.vn-fade-leave-active,.vn-fade-move{transition:all .5s}.vn-fade-enter-from,.vn-fade-leave-to{opacity:0}</style><script async="" defer="" src="https://matomo.robonomics.network//matomo.js"></script><meta property="og:type" content="website"><meta property="og:site_name" content="Sensors Map Thai Ko Pha Ngan"><meta property="og:title" content="Map of independent air quality sensors for Thai Ko Pha Ngan"><meta property="og:description" content="Welcome to the decentralized opensource sensors map which operates with the sole intent of serving the free will of individuals, without any beneficiaries."><meta property="og:url" content="https://sensors.social/?provider=remote&amp;type=pm10&amp;zoom=13&amp;lat=9.7472&amp;lng=100.0123"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Map of independent air quality sensors for Thai Ko Pha Ngan"><meta name="twitter:description" content="Welcome to the decentralized opensource sensors map which operates with the sole intent of serving the free will of individuals, without any beneficiaries."><meta name="twitter:site" content="@AIRA_Robonomics"><meta name="twitter:creator" content="@AIRA_Robonomics"></head>
   <body>
-    <div id="app"></div>
+    <div id="app" data-v-app="" class="map"><!----><header class="route-main" data-v-df134849=""><div class="header-banner flexline align-center" data-v-df134849=""><a href="https://www.indiegogo.com/projects/altruist-air-quality-bundle-urban-insight?utm_source=sensors.social&amp;utm_medium=header-banner" target="_blank" data-v-df134849=""><span data-v-df134849=""><b data-v-df134849="">Limited</b> Altruist Bundles on</span><img class="header-banner-svg" alt="Indiegogo" src="/assets/indiegogo.6de4fe64.svg" data-v-df134849=""></a></div><div class="header-content flexline space-between" data-v-df134849=""><div class="flexline align-start" data-v-df134849=""><a aria-current="page" href="/" class="router-link-active router-link-exact-active appicon" data-v-df134849=""><img alt="Map of independent air quality sensors for Thai Ko Pha Ngan" src="/assets/app-icon-512.a5eb7b3f.png" data-v-df134849=""></a><details tabindex="0" class="sensors details-popup" data-v-df134849=""><summary data-v-df134849=""><svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 51 72.6" xml:space="preserve" class="sensors-mainicon" data-v-1ca21f0d="" data-v-df134849=""><g data-v-1ca21f0d=""><path d="M29.5,63h-8.1c-1.5,0-2.6,1.2-2.6,2.6v1.2c0,1.5,1.2,2.6,2.6,2.6h1.1v0.8c0,1.3,1.1,2.4,2.4,2.4H26c1.3,0,2.4-1.1,2.4-2.4
+		v-0.8h1.1c1.5,0,2.6-1.2,2.6-2.6v-1.2C32.2,64.2,31,63,29.5,63z" data-v-1ca21f0d=""></path><path d="M25.5,24.3L25.5,24.3c-1.1,0-3.1-0.9-3.1-2.1l1-20.2c0-1.1,0.9-2.1,2.1-2.1h0c1.1,0,2.1,0.9,2.1,2.1l1,20.2
+		C28.6,23.4,26.7,24.3,25.5,24.3z" data-v-1ca21f0d=""></path><path class="st0" d="M45,65.8H6.1c-3.2,0-5.8-2.6-5.8-5.8V24c0-3.2,2.6-5.8,5.8-5.8H45c3.2,0,5.8,2.6,5.8,5.8v36
+		C50.8,63.2,48.2,65.8,45,65.8z" data-v-1ca21f0d=""></path><path d="M32.8,49.7H18.1c-0.2,0-0.4-0.2-0.4-0.4V34.6c0-0.2,0.2-0.4,0.4-0.4h14.7c0.2,0,0.4,0.2,0.4,0.4v14.7
+		C33.2,49.5,33,49.7,32.8,49.7z M18.5,48.9h14V35h-14V48.9z M25.4,47.1c-0.1,0-0.2,0-0.3-0.1l-4.8-4.8c-0.1-0.1-0.1-0.4,0-0.5
+		l4.8-4.8c0.1-0.1,0.4-0.1,0.5,0l4.8,4.8c0.1,0.1,0.1,0.4,0,0.5L25.7,47C25.6,47.1,25.5,47.1,25.4,47.1z M21.2,42l4.2,4.2l4.2-4.2
+		l-4.2-4.2L21.2,42z M39.7,29.9c-1.2,0-2.2-1-2.2-2.2s1-2.2,2.2-2.2s2.2,1,2.2,2.2S40.9,29.9,39.7,29.9z M39.7,26.3
+		c-0.8,0-1.5,0.7-1.5,1.5s0.7,1.5,1.5,1.5s1.5-0.7,1.5-1.5S40.5,26.3,39.7,26.3z M33.1,34.9l5.6-5.6c0.1-0.1,0.1-0.4,0-0.5
+		c-0.1-0.1-0.4-0.1-0.5,0l-5.6,5.6c-0.1,0.1-0.1,0.4,0,0.5c0.1,0.1,0.2,0.1,0.3,0.1C32.9,35,33,34.9,33.1,34.9z M11.4,29.9
+		c-1.2,0-2.2-1-2.2-2.2s1-2.2,2.2-2.2s2.2,1,2.2,2.2S12.6,29.9,11.4,29.9z M11.4,26.3c-0.8,0-1.5,0.7-1.5,1.5s0.7,1.5,1.5,1.5
+		s1.5-0.7,1.5-1.5S12.2,26.3,11.4,26.3z M18.5,34.9c0.1-0.1,0.1-0.4,0-0.5l-5.6-5.6c-0.1-0.1-0.4-0.1-0.5,0c-0.1,0.1-0.1,0.4,0,0.5
+		l5.6,5.6c0.1,0.1,0.2,0.1,0.3,0.1C18.3,35,18.4,34.9,18.5,34.9z M39.7,58.4c-1.2,0-2.2-1-2.2-2.2c0-1.2,1-2.2,2.2-2.2
+		s2.2,1,2.2,2.2C41.9,57.4,40.9,58.4,39.7,58.4z M39.7,54.7c-0.8,0-1.5,0.7-1.5,1.5s0.7,1.5,1.5,1.5s1.5-0.7,1.5-1.5
+		S40.5,54.7,39.7,54.7z M38.7,55.2c0.1-0.1,0.1-0.4,0-0.5l-5.6-5.6c-0.1-0.1-0.4-0.1-0.5,0c-0.1,0.1-0.1,0.4,0,0.5l5.6,5.6
+		c0.1,0.1,0.2,0.1,0.3,0.1C38.5,55.3,38.6,55.3,38.7,55.2z M11.4,58.4c-1.2,0-2.2-1-2.2-2.2c0-1.2,1-2.2,2.2-2.2s2.2,1,2.2,2.2
+		C13.6,57.4,12.6,58.4,11.4,58.4z M11.4,54.7c-0.8,0-1.5,0.7-1.5,1.5s0.7,1.5,1.5,1.5s1.5-0.7,1.5-1.5S12.2,54.7,11.4,54.7z
+		 M12.9,55.2l5.6-5.6c0.1-0.1,0.1-0.4,0-0.5c-0.1-0.1-0.4-0.1-0.5,0l-5.6,5.6c-0.1,0.1-0.1,0.4,0,0.5c0.1,0.1,0.2,0.1,0.3,0.1
+		C12.7,55.3,12.8,55.3,12.9,55.2z M22.7,30.8c0.8-1,1.9-1.5,3.2-1.5c1.2,0,2.3,0.5,3,1.4c0.1,0.2,0.4,0.2,0.5,0
+		c0.2-0.1,0.2-0.4,0-0.5c-0.9-1.1-2.2-1.7-3.6-1.7c-1.5,0-2.8,0.7-3.8,1.8c-0.1,0.2-0.1,0.4,0.1,0.5c0.1,0.1,0.1,0.1,0.2,0.1
+		C22.5,30.9,22.6,30.9,22.7,30.8z M21.1,29.4c1.2-1.5,2.9-2.3,4.7-2.3c1.8,0,3.4,0.8,4.6,2.1c0.1,0.2,0.4,0.2,0.5,0
+		c0.2-0.1,0.2-0.4,0-0.5c-1.3-1.5-3.2-2.4-5.1-2.4c-2.1,0-4,0.9-5.3,2.6c-0.1,0.2-0.1,0.4,0.1,0.5c0.1,0.1,0.1,0.1,0.2,0.1
+		C20.9,29.5,21,29.4,21.1,29.4z M14.5,45.7c0.1-0.2,0.1-0.4-0.1-0.5c-1-0.8-1.5-1.9-1.5-3.2c0-1.2,0.5-2.3,1.4-3
+		c0.2-0.1,0.2-0.4,0-0.5c-0.1-0.2-0.4-0.2-0.5,0c-1.1,0.9-1.7,2.2-1.7,3.6c0,1.5,0.7,2.8,1.8,3.8c0.1,0.1,0.1,0.1,0.2,0.1
+		C14.3,45.8,14.4,45.8,14.5,45.7z M13.1,47.2c0.1-0.2,0.1-0.4-0.1-0.5c-1.5-1.2-2.3-2.9-2.3-4.7c0-1.8,0.8-3.4,2.1-4.6
+		c0.2-0.1,0.2-0.4,0-0.5c-0.1-0.2-0.4-0.2-0.5,0C10.9,38.1,10,40,10,42c0,2.1,0.9,4,2.6,5.3c0.1,0.1,0.1,0.1,0.2,0.1
+		C12.9,47.4,13,47.3,13.1,47.2z M29.5,53.8c0.1-0.2,0.1-0.4-0.1-0.5c-0.2-0.1-0.4-0.1-0.5,0.1c-0.8,1-1.9,1.5-3.2,1.5
+		c-1.2,0-2.3-0.5-3-1.4c-0.1-0.2-0.4-0.2-0.5,0c-0.2,0.1-0.2,0.4,0,0.5c0.9,1.1,2.2,1.7,3.6,1.7C27.2,55.7,28.5,55,29.5,53.8z
+		 M31,55.3c0.1-0.2,0.1-0.4-0.1-0.5c-0.2-0.1-0.4-0.1-0.5,0.1c-1.2,1.5-2.9,2.3-4.7,2.3c-1.8,0-3.4-0.8-4.6-2.1
+		c-0.1-0.2-0.4-0.2-0.5,0c-0.2,0.1-0.2,0.4,0,0.5c1.3,1.5,3.2,2.4,5.1,2.4C27.8,57.8,29.7,56.9,31,55.3z M37.7,45.8
+		c1.1-0.9,1.7-2.2,1.7-3.6c0-1.5-0.7-2.8-1.8-3.8c-0.2-0.1-0.4-0.1-0.5,0.1c-0.1,0.2-0.1,0.4,0.1,0.5c1,0.8,1.5,1.9,1.5,3.2
+		c0,1.2-0.5,2.3-1.4,3c-0.2,0.1-0.2,0.4,0,0.5c0.1,0.1,0.2,0.1,0.3,0.1C37.6,45.8,37.6,45.8,37.7,45.8z M39.2,47.3
+		c1.5-1.3,2.4-3.2,2.4-5.1c0-2.1-0.9-4-2.6-5.3c-0.2-0.1-0.4-0.1-0.5,0.1c-0.1,0.2-0.1,0.4,0.1,0.5c1.5,1.2,2.3,2.9,2.3,4.7
+		c0,1.8-0.8,3.4-2.1,4.6c-0.2,0.1-0.2,0.4,0,0.5c0.1,0.1,0.2,0.1,0.3,0.1C39,47.4,39.1,47.4,39.2,47.3z" data-v-1ca21f0d=""></path></g></svg> 122</summary><div class="details-content nogeo" data-v-df134849=""><section data-v-df134849=""><h4 data-v-df134849="">12 sensors without geolocation</h4><ul class="sensors-list" data-v-df134849=""><li data-v-df134849=""><a href="/?provider=remote&amp;type=pm10&amp;zoom=13&amp;lat=0&amp;lng=0&amp;sensor=240be9ae08b76570b3093cfd675c41a5a221e34135433a4c0cc4faad8e634f7b" data-v-df134849=""><b data-v-df134849="">240be9...634f7b</b></a></li><li data-v-df134849=""><a href="/?provider=remote&amp;type=pm10&amp;zoom=13&amp;lat=0&amp;lng=0&amp;sensor=4HfghKTfGw7XdeoEaw7NHpvUojtvJUKnfGmuDfxMht5zT52i" data-v-df134849=""><b data-v-df134849="">4HfghK...5zT52i</b></a></li><li data-v-df134849=""><a href="/?provider=remote&amp;type=pm10&amp;zoom=13&amp;lat=0&amp;lng=0&amp;sensor=4FF7NobSPgvFJtMbvz4qJsuEfaRQzHb5UMsaDJjJPzFRW8tb" data-v-df134849=""><b data-v-df134849="">4FF7No...FRW8tb</b></a></li><li data-v-df134849=""><a href="/?provider=remote&amp;type=pm10&amp;zoom=13&amp;lat=0&amp;lng=0&amp;sensor=4Fc7xVndB6Qk8k8AyA3aSXpeSTLoH3sfiEoku7upWwv7Jhq5" data-v-df134849=""><b data-v-df134849="">4Fc7xV...v7Jhq5</b></a></li><li data-v-df134849=""><a href="/?provider=remote&amp;type=pm10&amp;zoom=13&amp;lat=0&amp;lng=0&amp;sensor=4EPd7qCwpeyUY9EduJZ7tH3ujRW3zyUw97usoPLiEFyLgHDR" data-v-df134849=""><b data-v-df134849="">4EPd7q...yLgHDR</b></a></li><li data-v-df134849=""><a href="/?provider=remote&amp;type=pm10&amp;zoom=13&amp;lat=0&amp;lng=0&amp;sensor=4CxKL7HLTDu69nqQBKvqh3xcVYCkQXi3j19uD1c9oXB6y34q" data-v-df134849=""><b data-v-df134849="">4CxKL7...B6y34q</b></a></li><li data-v-df134849=""><a href="/?provider=remote&amp;type=pm10&amp;zoom=13&amp;lat=0&amp;lng=0&amp;sensor=4Frki8aFPXZpPRo6z8xnj3bFie6TJXJFyi1TT8jAhJrDLwWK" data-v-df134849=""><b data-v-df134849="">4Frki8...rDLwWK</b></a></li><li data-v-df134849=""><a href="/?provider=remote&amp;type=pm10&amp;zoom=13&amp;lat=0&amp;lng=0&amp;sensor=4EsfUwSPGx3SENowfpDDKABfRzQ5uAbGR25Lp1yaxFP23BR4" data-v-df134849=""><b data-v-df134849="">4EsfUw...P23BR4</b></a></li><li data-v-df134849=""><a href="/?provider=remote&amp;type=pm10&amp;zoom=13&amp;lat=0&amp;lng=0&amp;sensor=b879240fb5b24e4995765028d9aa3d35e5409bfd37b69cfadaa8e6ef2b5b514c" data-v-df134849=""><b data-v-df134849="">b87924...5b514c</b></a></li><li data-v-df134849=""><a href="/?provider=remote&amp;type=pm10&amp;zoom=13&amp;lat=0&amp;lng=0&amp;sensor=8dd6ee2b33ba1b818cafda84064588966fd77d7d8b1cac277ece7fdabdc877ef" data-v-df134849=""><b data-v-df134849="">8dd6ee...c877ef</b></a></li><li data-v-df134849=""><a href="/?provider=remote&amp;type=pm10&amp;zoom=13&amp;lat=0&amp;lng=0&amp;sensor=4EpqQ3UoRZ9KugyxEkU3D2xKc36Akwayt846xfeuShNLYt1e" data-v-df134849=""><b data-v-df134849="">4EpqQ3...NLYt1e</b></a></li><li data-v-df134849=""><a href="/?provider=remote&amp;type=pm10&amp;zoom=13&amp;lat=0&amp;lng=0&amp;sensor=4D648gU3FjHPFmLS472y8QkpJXhZtZehEQ9e5qtHZnLWC7S6" data-v-df134849=""><b data-v-df134849="">4D648g...LWC7S6</b></a></li></ul></section><div class="buySensor" data-v-74909aae="" data-v-df134849=""><div class="buySensor-grid" data-v-74909aae=""><a class="buySensor-preview" href="https://www.indiegogo.com/projects/altruist-air-quality-bundle-urban-insight?utm_source=sensors.social&amp;utm_medium=header_popup" target="_blank" rel="noopener" data-v-74909aae=""><img alt="" src="/assets/Altruist-bundle.6dfccaab.webp" data-v-74909aae=""><span data-v-74909aae="">New</span></a><div data-v-74909aae=""><h3 data-v-74909aae="">Where to get Altruist Indoor &amp; Outdoor Sensor</h3><p data-v-74909aae="">Air monitor for indoors &amp; outdoors: urban PM &amp; noise, bedroom CO₂, indoor vs outdoor temp &amp; humidity, barometric pressure, E-Ink display, Wi-Fi, USB-C, no forced cloud, Home Assistant ready. DIY &amp; modding friendly! Super Early Bird – €149&nbsp;</p><p data-v-74909aae=""><a href="https://www.indiegogo.com/projects/altruist-air-quality-bundle-urban-insight?utm_source=sensors.social&amp;utm_medium=header_popup" target="_blank" class="button" data-v-74909aae="">Join Indiegogo Campaign→</a></p></div></div></div></div></details></div><div class="flexline" data-v-df134849=""><select data-v-df134849=""><option value="en" data-v-df134849="">EN</option><option value="ru" data-v-df134849="">RU</option></select><div id="about" class="popover popover-top-right" popover="" data-v-df134849=""><h3 data-v-df134849="">Web3 public sensors map</h3><p data-v-df134849="">Welcome to the decentralized opensource sensors map which operates with the sole intent of serving <a href="https://www.fsf.org/campaigns/priority-projects/decentralization-federation" target="_blank" rel="noopener" data-v-df134849="">the free will of individuals</a> , without any beneficiaries. It offers two distinct layers of decentralization at your choise: peer-to-peer connectivity for direct access to sensor data, and the federative concept for accumulating sensor data and displaying measurement history. Click <a href="https://robonomics.academy/en/learn/sensors-connectivity-course/sensors-connectivity-module/" target="_blank" rel="noopener" data-v-df134849="">here</a> for further technical details.</p><p data-v-df134849="">Map data © <a href="https://www.openstreetmap.org/copyright" target="_blank" data-v-df134849="">OpenStreetMap contributors</a></p><section class="navlinks" data-v-df134849=""><a href="/altruist-use-cases/" class="" data-v-df134849="">Altruist use cases</a><a href="/altruist-timeline/" class="" data-v-df134849="">Altruist timeline</a><a href="/altruist-compare/" class="" data-v-df134849="">Altruist comparison table</a><a href="/air-measurements/" class="" data-v-df134849="">Measurements guide</a><a href="/privacy-policy/" class="" data-v-df134849="">Privacy policy</a></section><section data-v-81274387="" data-v-df134849=""><p data-v-81274387=""><a href="https://github.com/airalab/sensors.robonomics.network" target="_blank" rel="noopener" data-v-81274387=""><b data-v-81274387="">positivecrash/sensors-phangan </b></a></p><div data-v-81274387=""><b data-v-81274387="">Secured by</b></div><img alt="" src="/assets/polkadot-new-dot-logo-horizontal.5c15bc80.svg" class="polkadotLogo" data-v-81274387=""></section></div><button class="popovercontrol" popovertarget="about" data-v-df134849=""><svg class="svg-inline--fa fa-bars" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-v-df134849=""><path class="" fill="currentColor" d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"></path></svg></button><a href="/login/" class="button" data-v-b5d397a0="" data-v-df134849=""> Login </a></div></div></header><!----><!----><div class="mapcontainer leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" id="map" data-v-499252de="" tabindex="0" style="--064fe878: 5000;"><div class="" style="position: absolute; top: 0px; left: 0px; right: 0px; height: 100%;"></div><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; filter: grayscale(50%) saturate(70%); opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" src="https://b.tile.openstreetmap.org/13/6371/3872.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(186px, 13px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/13/6372/3872.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(442px, 13px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/13/6371/3873.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(186px, 269px, 0px); opacity: 0;"><img alt="" src="https://a.tile.openstreetmap.org/13/6372/3873.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(442px, 269px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/13/6371/3871.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(186px, -243px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/13/6372/3871.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(442px, -243px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/13/6370/3872.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-70px, 13px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/13/6373/3872.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(698px, 13px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/13/6370/3873.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-70px, 269px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/13/6373/3873.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(698px, 269px, 0px); opacity: 1;"><img alt="" src="https://a.tile.openstreetmap.org/13/6371/3874.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(186px, 525px, 0px); opacity: 1;"><img alt="" src="https://b.tile.openstreetmap.org/13/6372/3874.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(442px, 525px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/13/6370/3871.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-70px, -243px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/13/6373/3871.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(698px, -243px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/13/6370/3874.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-70px, 525px, 0px); opacity: 1;"><img alt="" src="https://c.tile.openstreetmap.org/13/6373/3874.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(698px, 525px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-shadow-pane"></div><div class="leaflet-pane leaflet-marker-pane"><div class="leaflet-marker-icon marker-cluster leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(608px, 152px, 0px); z-index: 152;"><div data-id="4Hh9YgUzQPWd3RmnFtn3ebaw2FTYSQKvRUuKzKv3jEktnt5D" class="marker-cluster-circle " style="color:color-mix(in srgb, color-mix(in srgb, var(--measure-green) 70%, transparent), #000 10%);background-color: color-mix(in srgb, var(--measure-green) 70%, transparent);border-color: color-mix(in srgb, color-mix(in srgb, var(--measure-green) 70%, transparent), #000 10%);"></div></div><div class="leaflet-marker-icon marker-cluster leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(426px, 512px, 0px); z-index: 512;"><div data-id="4DQbqxSGRZjmx3r2yugvY9Uv2FyRD4vRafncoSvN28yob3fs" class="marker-cluster-circle " style="color:color-mix(in srgb, color-mix(in srgb, var(--measure-green) 70%, transparent), #000 10%);background-color: color-mix(in srgb, var(--measure-green) 70%, transparent);border-color: color-mix(in srgb, color-mix(in srgb, var(--measure-green) 70%, transparent), #000 10%);"></div></div><div class="leaflet-marker-icon marker-cluster leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -20px; margin-top: -20px; width: 40px; height: 40px; transform: translate3d(292px, 461px, 0px); z-index: 461;"><div class="marker-cluster-circle" style="color:#333;background-color: rgba(255,255,255, 0.7);border-color: rgba(204,204,204, 1);" data-children="4GP1KKQYSjDVUYo36e6a3Gk4HunqDvgWyfd7P2qJyFwtjGYB,4E79p85KM5EaLo6AvDrP2mnu8MhEs8MJBQjeC9WW9TE49dUq"><span>2</span></div></div></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(1.63119e+06px, 991519px, 0px) scale(4096);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"></div></div></div><div class="mapcontrols" isload="false" data-v-faab1fee="" data-v-499252de="" style="--064fe878: 5000;"><div class="flexline" data-v-faab1fee=""><input type="date" max="2025-08-20" data-v-faab1fee=""><select data-v-faab1fee=""><option value="pm10" data-v-faab1fee="">PM10</option><option value="pm25" data-v-faab1fee="">PM2.5</option><option value="temperature" data-v-faab1fee="">Temperature</option><option value="pressure" data-v-faab1fee="">Pressure</option><option value="humidity" data-v-faab1fee="">Humidity</option><option value="noisemax" data-v-faab1fee="">Noise Max.</option><option value="noiseavg" data-v-faab1fee="">Noise Avg.</option><option value="gc" data-v-faab1fee="">Radiation</option><option value="noise" data-v-faab1fee="">Noise</option><option value="co2" data-v-faab1fee="">CO₂</option></select></div><div class="flexline" data-v-faab1fee=""><div id="mapsettings" class="popover-bottom-right popover" popover="" data-v-faab1fee=""><section data-v-faab1fee=""><select class="provider-select" data-v-faab1fee=""><option value="realtime">Realtime</option><option value="remote">Daily Recap</option></select></section><section data-v-faab1fee=""><label class="label-line" data-v-faab1fee=""><input id="wind" type="checkbox" disabled="" data-v-faab1fee=""><span data-v-faab1fee="">Wind</span></label></section><section data-v-faab1fee=""><label class="label-line" data-v-faab1fee=""><input id="messages" type="checkbox" data-v-faab1fee=""><span data-v-faab1fee="">Messages</span></label></section><hr data-v-faab1fee=""><section data-v-faab1fee=""><h3 data-v-faab1fee="">Import data</h3><form action="https://roseman.airalab.org/api/sensor/csv/1755561600/1755734399/Guidjel" data-v-faab1fee=""><section><select class="block"><optgroup label="Algeria"><option value="Guidjel">Guidjel</option></optgroup><optgroup label="Austria"><option value="Wien">Wien</option><option value="Baumgartenberg">Baumgartenberg</option></optgroup><optgroup label="Belgium"><option value="Brussels">Brussels</option></optgroup><optgroup label="Cyprus"><option value="Germasogeia">Germasogeia</option><option value="Limassol">Limassol</option><option value="Limassol Municipality">Limassol Municipality</option><option value="Mandria Lemesou">Mandria Lemesou</option><option value="Mesa Geitonia">Mesa Geitonia</option><option value="Moniatis">Moniatis</option><option value="Nicosia">Nicosia</option><option value="Pafos">Pafos</option><option value="Paphos Municipality">Paphos Municipality</option><option value="Paralimni">Paralimni</option><option value="Ypsonas Municipality">Ypsonas Municipality</option><option value="Δήμος Αγίου Αθανασίου">Δήμος Αγίου Αθανασίου</option><option value="Κοινότητα Αγίου Τύχωνα">Κοινότητα Αγίου Τύχωνα</option><option value="Κοινότητα Μουτταγιάκας">Κοινότητα Μουτταγιάκας</option><option value="Κοινότητα Πύργου Λεμεσού">Κοινότητα Πύργου Λεμεσού</option><option value="Κοινότητα Χλώρακα">Κοινότητα Χλώρακα</option></optgroup><optgroup label="Georgia"><option value="Kobuleti">Kobuleti</option></optgroup><optgroup label="Netherlands"><option value="Arnhem">Arnhem</option></optgroup><optgroup label="Nigeria"><option value="Mun-Munsal">Mun-Munsal</option><option value="Dukku">Dukku</option></optgroup><optgroup label="Russia"><option value="Chelyabinsk">Chelyabinsk</option><option value="Светловский">Светловский</option><option value="Myskovsky Urban Okrug">Myskovsky Urban Okrug</option><option value="Kirov">Kirov</option><option value="Krasnodar Krai">Krasnodar Krai</option><option value="Novorossiysk">Novorossiysk</option><option value="Новороссийск">Новороссийск</option><option value="Kurgan">Kurgan</option><option value="Пашозёрское">Пашозёрское</option><option value="Moscow">Moscow</option><option value="Balashikha">Balashikha</option><option value="Solnechnogorsky District">Solnechnogorsky District</option><option value="Perm">Perm</option><option value="Pargolovo">Pargolovo</option><option value="Saint Petersburg">Saint Petersburg</option><option value="Khryashchevka">Khryashchevka</option><option value="Samara">Samara</option><option value="Togliatti">Togliatti</option><option value="c. Ягодное">c. Ягодное</option><option value="Saratov">Saratov</option><option value="Kazan">Kazan</option><option value="Ефремов">Ефремов</option><option value="Cherepovets">Cherepovets</option></optgroup><optgroup label="Saudi Arabia"><option value="Al Udayd Governorate">Al Udayd Governorate</option></optgroup><optgroup label="Switzerland"><option value="Davos">Davos</option><option value="Lugano">Lugano</option></optgroup><optgroup label="Thailand"><option value="Khlong Tan Nuea Subdistrict">Khlong Tan Nuea Subdistrict</option><option value="Lak Song Subdistrict">Lak Song Subdistrict</option><option value="Phet Pha-ngan">Phet Pha-ngan</option></optgroup><optgroup label="Ukraine"><option value="Donetsk Municipality">Donetsk Municipality</option></optgroup><optgroup label="Uzbekistan"><option value="Yashnabad District">Yashnabad District</option></optgroup></select></section><section><select class="block"><option value="24hours">Current day</option><option value="currentMonth">Last month</option><option value="chooseDates">Select dates</option></select></section><!----><section><input type="submit" class="block" value="Download csv file"></section></form></section></div><button class="popovercontrol" popovertarget="mapsettings" data-v-faab1fee=""><svg class="svg-inline--fa fa-gear" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="gear" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-v-faab1fee=""><path class="" fill="currentColor" d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"></path></svg></button><div id="bookmarks" class="popover-bottom-right popover" popover="" data-v-faab1fee=""><h3 data-v-faab1fee="">Your bookmarked sensors</h3>Save any sensor from the map here for quicker access</div><button class="popovercontrol bookmarksbutton" popovertarget="bookmarks" data-v-faab1fee=""><svg class="svg-inline--fa fa-bookmark" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bookmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-v-faab1fee=""><path class="" fill="currentColor" d="M0 48V487.7C0 501.1 10.9 512 24.3 512c5 0 9.9-1.5 14-4.4L192 400 345.7 507.6c4.1 2.9 9 4.4 14 4.4c13.4 0 24.3-10.9 24.3-24.3V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48z"></path></svg><!----></button><button class="popovercontrol popoovergeo" area-label="Show my location" title="Show my location" data-v-499252de=""><svg class="svg-inline--fa fa-location-arrow" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="location-arrow" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-v-499252de=""><path class="" fill="currentColor" d="M429.6 92.1c4.9-11.9 2.1-25.6-7-34.7s-22.8-11.9-34.7-7l-352 144c-14.2 5.8-22.2 20.8-19.3 35.8s16.1 25.8 31.4 25.8l176 0 0 176c0 15.3 10.8 28.4 25.8 31.4s30-5.1 35.8-19.3l144-352z"></path></svg><!----></button></div></div><div class="vue-notification-group" style="width: 300px; top: 0px; right: 0px;"><span></span></div></div>
     
   
 
