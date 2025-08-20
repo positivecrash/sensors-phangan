@@ -14,7 +14,14 @@
       "lat": "39.0277",
       "lng": "8.7891"
     },
+    "boundsDelta": {
+      "lat": "",
+      "lng": ""
+    },
     "measure": "pm25"
+  },
+  "SERVICES": {
+    "accounts": true
   },
   "SHOW_MESSAGES": true,
   "DEFAULT_TYPE_PROVIDER": "remote",
