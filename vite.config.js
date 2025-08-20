@@ -23,7 +23,7 @@ export default defineConfig(({ mode }) => {
   console.log("Load config:", configEnv);
 
   return {
-    base: "/sensors-phangan/",
+    base: "/",
     // server: { https: true },
     plugins: [
       vue(),
