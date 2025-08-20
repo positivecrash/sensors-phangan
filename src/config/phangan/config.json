@@ -4,6 +4,10 @@
     "position": {
       "lat": "9.7472",
       "lng": "100.0123"
+    },
+     "boundsDelta": {
+      "lat": "0.2",
+      "lng": "0.2"
     }
   },
   "SHOW_MESSAGES": false,
