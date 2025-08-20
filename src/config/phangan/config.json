@@ -1,0 +1,13 @@
+{
+  "MAP": {
+    "zoom": "13",
+    "position": {
+      "lat": "9.7472",
+      "lng": "100.0123"
+    }
+  },
+  "SHOW_MESSAGES": false,
+  "TITLE": "Map of independent air quality sensors for Thai Ko Pha Ngan",
+  "SITE_NAME": "Sensors Map Thai Ko Pha Ngan",
+  "REPO_NAME": "positivecrash/sensors-phangan"
+}
